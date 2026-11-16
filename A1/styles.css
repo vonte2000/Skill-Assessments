@@ -8,31 +8,49 @@ body {
     margin: 0;
     color: white;
     text-align: center;
-    opacity: 60%;
+    opacity: 45%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    
     
 }
 
 form {
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: column; /* Mobile: vertical layout */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 50%;
     box-sizing: border-box;
     text-align: center;
-    align-items: center;
 }
 
-input {
-    width: 30%;
+input, 
+button {
+    width: 100%;
+    box-sizing: border-box;
 }
+
 input::placeholder {
     text-align: center;
 }
+/*screens larger than 768px*/
 @media (min-width: 768px) {
+    body {
+        opacity: 90%;
+    }
     form {
-        bottom: 0;
-        left: 0;
+        flex-direction: row; /* Horizontal layout */
+        justify-content: center;
+        align-items: center;
+        margin-top: auto;
+        padding: 20px;
+    }
+    input,
+    button {
+        width: 20%,
     }
     
 }
