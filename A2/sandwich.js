@@ -53,6 +53,7 @@ const findVegetarianSandwich = (sandwiches) => {
 console.log(findVegetarianSandwich(sandwiches))
 
 const findCheapestSandwich = (sandwiches) => {
-    Math.min(...sandwiches.map(sandwich => sandwich.cost))
+    const cheapestSandwich = Math.min(...sandwiches.map(sandwich => sandwich.cost))
+    return sandwiches.find(sandwich => sandwich.cost === cheapestSandwich).type
 }
-findCheapestSandwich(sandwiches);
+console.log(findCheapestSandwich(sandwiches));
