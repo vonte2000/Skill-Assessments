@@ -37,10 +37,22 @@ const sandwiches = [
     {type: "Italian", calories: 1000, cost: 7.69, isVegetarian: false},
     {type: "Veggie", calories: 500, cost: 5.50, isVegetarian: true},
     {type: "Meatball", calories: 900, cost: 8.25, isVegetarian: false},
-    {type: "Jackfruit", calories: 650, cost: 8.50, isVegetarian: false}
+    {type: "Jackfruit", calories: 650, cost: 8.50, isVegetarian: true}
 ]
 
 const makeSandwich = (type, calories, cost, isVegetarian) => {
     const sandwich = {type, calories, cost, isVegetarian} //creates new sandwich object
     sandwiches.push(sandwich) //adds new object to the end of array
 }
+makeSandwich("ham & cheese", 800, 8.50, false)
+//console.log(sandwiches) 
+
+const findVegetarianSandwich = (sandwiches) => {
+    return sandwiches.filter((sandwich) => sandwich.isVegetarian === true)
+}
+console.log(findVegetarianSandwich(sandwiches))
+
+const findCheapestSandwich = (sandwiches) => {
+    Math.min(...sandwiches.map(sandwich => sandwich.cost))
+}
+findCheapestSandwich(sandwiches);
